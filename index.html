@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Notícias Tech</title>
   <style>
     header {
       background-color: rgb(110, 0, 255);
       color: rgb(255, 255, 255);
       text-align: center;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 0 auto 10px auto;
+      padding: 10px;
+      border: 3px solid rgb(80, 0, 180); /* Borda no cabeçalho */
+      border-radius: 8px;                 /* Bordas arredondadas */
     }
 
     main { 
@@ -18,10 +21,35 @@
       color: rgb(255, 255, 255);
       max-width: 800px;
       margin: 0 auto;
+      padding: 20px;
+      border: 3px solid rgb(110, 0, 255); /* Borda no conteúdo principal */
+      border-radius: 8px;                 /* Bordas arredondadas */
     }
 
     article {
-      display: flex;
+      display: flex;          
+      gap: 20px;              
+      align-items: flex-start;
+    }
+
+    article img {
+      max-width: 250px;
+      height: auto;
+      border: 2px solid white;            /* Borda branca ao redor da imagem */
+      border-radius: 6px;                 /* Cantos arredondados na imagem */
+    }
+
+    article div {
+      flex: 1;                
+    }
+
+    button {
+      background-color: white;
+      border: 2px solid rgb(110, 0, 255); /* Borda nos botões */
+      border-radius: 20px;               /* Botões arredondados estilo pill */
+      padding: 5px 12px;
+      cursor: pointer;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -34,8 +62,10 @@
 
   <main>
     <article>
-      <img src="coiso.jpg" width="250" alt="Foto mostrando um computador funcionando sem gabinete, declarando as possibilidades de manipular o jeito que funciona um computador">
+      <!-- Lado Esquerdo: Imagem -->
+      <img src="coiso.jpg" alt="Foto mostrando um computador funcionando sem gabinete, declarando as possibilidades de manipular o jeito que funciona um computador">
       
+      <!-- Lado Direito: Texto e Botões -->
       <div>
         <button>💯 <span>0</span></button>
         <button>🤖 <span>0</span></button>
