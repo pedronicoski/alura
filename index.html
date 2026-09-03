@@ -1,111 +1,241 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Computadores</title>
+
   <style>
+
     header {
+
       background-color: rgb(110, 0, 255);
+
       color: rgb(255, 255, 255);
+
       text-align: center;
+
       max-width: 800px;
+
       margin: 0 auto 10px auto;
+
       padding: 10px;
+
       border: 3px solid rgb(80, 0, 180);
+
       border-radius: 8px;
+
     }
+
+
 
     main { 
+
       background-color: rgb(164, 120, 222);
+
       color: rgb(255, 255, 255);
+
       max-width: 800px;
+
       margin: 0 auto;
+
       padding: 20px;
+
       border: 3px solid rgb(110, 0, 255);
+
       border-radius: 8px;
+
     }
+
+
 
     article {
+
       display: flex;         
-      gap: 15px;             
-      align-items: stretch;
+
+      gap: 20px;             
+
+      align-items: flex-start;
+
+      border: 2px solid white; 
+
+      border-radius: 8px;
+
+      padding: 15px;
+
       margin-bottom: 20px;    
+
       background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      border-radius: 10px;
+
     }
+
+
 
     article:last-child {
+
       margin-bottom: 0;
+
     }
 
-    /* Borda e ajuste na imagem */
+
+
     article img {
-      flex: 1;
-      max-width: 50%;
+
+      max-width: 250px;
+
+      width: 100%;
+
       height: auto;
-      object-fit: cover;
-      border: 2px dashed rgba(255, 255, 255, 0.8);
-      border-radius: 8px;
-      padding: 5px;
-      box-sizing: border-box;
+
+      border: 2px solid white;
+
+      border-radius: 6px;
+
     }
 
-    /* Borda e ajuste na caixa de texto */
+
+
     article div {
-      flex: 1;
-      border: 2px dashed rgba(255, 255, 255, 0.8);
-      border-radius: 8px;
-      padding: 15px;
-      box-sizing: border-box;
+
+      flex: 1;                
+
     }
+
+
 
     button {
+
       background-color: white;
+
       border: 2px solid rgb(110, 0, 255);
+
       border-radius: 20px;
+
       padding: 5px 12px;
+
       cursor: pointer;
+
       font-weight: bold;
+
     }
+
   </style>
+
 </head>
+
 <body>
 
+
+
   <header>
+
     <h1>Minha página sobre computadores.</h1>
+
     <p>Aqui vou mostrar computadores de ultima e de baixa geração, desde o pior até o melhor.</p>
+
   </header>
 
+
+
   <main>
+
+    
+
     <article>
-      <img src="coiso.jpg" alt="Foto mostrando um computador funcionando sem gabinete">
+
+      
+
+      <img src="coiso.jpg" alt="Foto mostrando um computador funcionando sem gabinete, declarando as possibilidades de manipular o jeito que funciona um computador"
+
       <div>
+
         <button>💯 <span>0</span></button>
+
         <button>🤖 <span>0</span></button>
+
         <h2>Meu primeiro post!</h2>
+
         <p class="autor">Por: Pedro Nicoski</p>
+
         <h3>Bom dia! Aqui vou compartilhar todas as informações de computadores possíveis que eu encontrar.</h3>
+
         <p class="descricao">Aqui na imagem, um computador funcionando sem gabinete, para mostrar minimamente o que dá para fazer com um computador.</p>
+
       </div>
+
     </article>
 
+
+
+   
+
     <article>
-      <img src="comp.jpeg" alt="Foto mostrando um computador de última geração">
+
+     
+
+      <img src="comp.jpeg" alt="Foto mostrando um computador de última geração capaz de rodar as coisas mais pesadas.">
+
+      
+
+      
+
       <div>
+
         <button>💯 <span>0</span></button>
+
         <button>🤖 <span>0</span></button>
+
+
+
         <h2>Os computadores</h2>
+
         <p class="autor">Por: Pedro Nicoski</p>
+
         <h3>Computador de alta performance</h3>
+
         <p class="descricao">Aqui um computador de última geração, custando valores absurdos, capaz de rodar as coisas mais pesadas possíveis, como render 3d e jogo em 4k.</p>
+
       </div>
+
     </article>
 
-    <article>
-      <div>
-        <button>💯 <span>0</span></button>
-        <button>🤖 <span>0</span></button>
-        <h2>O primeiro computador</h2>
-        <p class="descricao">O primeiro computador estava sendo criado em meio a segunda guerra mundial, e foi lançado em 1946, ocupava incriveis 135m² e
+  </main>
+
+
+
+  <script>
+
+    const botoes = document.querySelectorAll("button");
+
+
+
+    botoes.forEach(function(botao) {
+
+      botao.addEventListener("click", botaoClicado);
+
+
+
+      function botaoClicado() {
+
+        console.log("fui clicado");
+
+        let texto = botao.querySelector("span");
+
+        texto.textContent++;
+
+      }
+
+    });
+
+  </script>
+
+
+
+</body>
+
+</html> 
