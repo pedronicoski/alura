@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Computadores</title>
   <style>
+    body {
+      background-color: #f4f4f9;
+      color: #333333;
+      font-family: sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Estilos para o Tema Escuro */
+    body.dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode header {
+      background-color: rgb(50, 0, 120);
+      border-color: rgb(30, 0, 80);
+    }
+
+    body.dark-mode main {
+      background-color: rgb(70, 40, 110);
+      border-color: rgb(50, 0, 120);
+    }
+
+    body.dark-mode article {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
     header {
       background-color: rgb(110, 0, 255);
       color: rgb(255, 255, 255);
@@ -14,6 +42,21 @@
       padding: 10px;
       border: 3px solid rgb(80, 0, 180);
       border-radius: 8px;
+      position: relative;
+    }
+
+    /* Botão de Alternar Tema */
+    .theme-toggle-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #ffffff;
+      color: #000000;
+      border: 2px solid rgb(80, 0, 180);
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     main { 
@@ -66,6 +109,7 @@
 <body>
 
   <header>
+    <button id="themeToggle" class="theme-toggle-btn">🌙 Modo Escuro</button>
     <h1>Minha página sobre computadores.</h1>
     <p>Aqui vou mostrar computadores de última e de baixa geração, desde o pior até o melhor.</p>
   </header>
@@ -75,8 +119,8 @@
     <article>
       <img src="coiso.jpg" alt="Foto mostrando um computador funcionando sem gabinete, declarando as possibilidades de manipular o jeito que funciona um computador">
       <div>
-        <button>💯 <span>0</span></button>
-        <button>🤖 <span>0</span></button>
+        <button class="btn-reaction">💯 <span>0</span></button>
+        <button class="btn-reaction">🤖 <span>0</span></button>
         <h2>Meu primeiro post!</h2>
         <p class="autor">Por: Pedro Nicoski</p>
         <h3>Bom dia! Aqui vou compartilhar todas as informações de computadores possíveis que eu encontrar.</h3>
@@ -86,8 +130,8 @@
 
     <article>
       <div>
-        <button>💯 <span>0</span></button>
-        <button>🤖 <span>0</span></button>
+        <button class="btn-reaction">💯 <span>0</span></button>
+        <button class="btn-reaction">🤖 <span>0</span></button>
         <h2>O Primeiro Computador</h2>
         <p class="autor">Por: Pedro Nicoski</p>
         <h3>ENIAC: O começo de tudo</h3>
@@ -97,8 +141,8 @@
 
     <article>
       <div>
-        <button>💯 <span>0</span></button>
-        <button>🤖 <span>0</span></button>
+        <button class="btn-reaction">💯 <span>0</span></button>
+        <button class="btn-reaction">🤖 <span>0</span></button>
         <h2>O Primeiro Jogo da História</h2>
         <p class="autor">Por: Pedro Nicoski</p>
         <h3>Tennis for Two (1958)</h3>
@@ -109,8 +153,8 @@
     <article>
       <img src="comp.jpeg" alt="Foto mostrando um computador de última geração capaz de rodar as coisas mais pesadas.">
       <div>
-        <button>💯 <span>0</span></button>
-        <button>🤖 <span>0</span></button>
+        <button class="btn-reaction">💯 <span>0</span></button>
+        <button class="btn-reaction">🤖 <span>0</span></button>
         <h2>Os computadores</h2>
         <p class="autor">Por: Pedro Nicoski</p>
         <h3>Computador de alta performance</h3>
@@ -121,16 +165,28 @@
   </main>
 
   <script>
-    const botoes = document.querySelectorAll("button");
+
+    const botoesReacao = document.querySelectorAll(".btn-reaction");
 
     function botaoClicado(event) {
-      console.log("fui clicado");
       let texto = event.currentTarget.querySelector("span");
       texto.textContent = Number(texto.textContent) + 1;
     }
 
-    botoes.forEach(function(botao) {
+    botoesReacao.forEach(function(botao) {
       botao.addEventListener("click", botaoClicado);
+    });
+
+    const themeToggleBtn = document.getElementById("themeToggle");
+
+    themeToggleBtn.addEventListener("click", function() {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        themeToggleBtn.textContent = "☀️ Modo Claro";
+      } else {
+        themeToggleBtn.textContent = "🌙 Modo Escuro";
+      }
     });
   </script>
 
